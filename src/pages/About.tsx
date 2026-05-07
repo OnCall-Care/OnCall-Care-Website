@@ -16,17 +16,19 @@ export default function About() {
           </div>
         </section>
 
-        <section className="about-story-section container">
-          <div className="story-grid">
-            <div className="story-content">
-              <h2 className="section-title">The Problem With <br/><span className="text-primary">Traditional Systems</span></h2>
-              <p className="section-desc">When a medical emergency strikes, every single second dictates the outcome. Traditional ambulances and emergency services are incredible, but they are often bottlenecked by traffic, dispatch queues, and sheer distance.</p>
-              <p className="section-desc">We realized that in most urban and suburban areas, there is a qualified nurse, EMT, or doctor living within a half-mile radius of any incident. They just didn't have a way to know someone next door needed help.</p>
-            </div>
-            <div className="story-visual">
-              <div className="dark-card p-40">
-                <h3 className="text-white mb-20">Our Solution</h3>
-                <p className="text-gray-light">OnCallCare bridges this gap by pinging verified, off-duty medical professionals right in your neighborhood the moment you request help. We turn your community into a rapid-response safety net.</p>
+        <section className="about-story-section">
+          <div className="container">
+            <div className="story-grid">
+              <div className="story-content">
+                <h2 className="section-title">The Problem With <br/><span className="text-primary">Traditional Systems</span></h2>
+                <p className="section-desc">When a medical emergency strikes, every single second dictates the outcome. Traditional ambulances and emergency services are incredible, but they are often bottlenecked by traffic, dispatch queues, and sheer distance.</p>
+                <p className="section-desc">We realized that in most urban and suburban areas, there is a qualified nurse, EMT, or doctor living within a half-mile radius of any incident. They just didn't have a way to know someone next door needed help.</p>
+              </div>
+              <div className="story-visual">
+                <div className="dark-card p-40">
+                  <h3 className="text-white mb-20">Our Solution</h3>
+                  <p className="text-gray-light">OnCallCare bridges this gap by pinging verified, off-duty medical professionals right in your neighborhood the moment you request help. We turn your community into a rapid-response safety net.</p>
+                </div>
               </div>
             </div>
           </div>

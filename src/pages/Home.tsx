@@ -1,15 +1,23 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ResponderModal from '../components/ResponderModal';
 import { FiShield, FiClock, FiMapPin, FiRadio, FiLock, FiStar, FiCheck } from 'react-icons/fi';
 import { FaAmbulance, FaHandshake, FaHospital, FaUserNurse } from 'react-icons/fa';
 
 const GlobeVisual = lazy(() => import('../components/GlobeVisual'));
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleDownload = () => {
+    window.location.href = '/oncallcare.apk';
+  };
+
   return (
     <>
       <Header />
+      <ResponderModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <main>
         {/* Hero Section */}
         <section className="hero-section">
@@ -19,8 +27,8 @@ export default function Home() {
               <h1 className="hero-title">Emergency Help.<br/><span className="text-primary">Right Where You Are.</span></h1>
               <p className="hero-desc">Instantly connect with the nearest emergency and medical responders in a matter of minutes. Because every second counts.</p>
               <div className="hero-actions">
-                <button className="btn-primary btn-large">Get Quick Help Now</button>
-                <button className="btn-outline btn-large">Browse Services</button>
+                <button onClick={handleDownload} className="btn-primary btn-large">Download the App</button>
+                <button onClick={() => setIsModalOpen(true)} className="btn-outline btn-large">Be a Responder</button>
               </div>
               <div className="hero-stats">
                 <div className="stat"><span className="stat-icon"><FiShield /></span> Verified Pros</div>
@@ -197,7 +205,7 @@ export default function Home() {
                     <li><span className="check-icon"><FiCheck /></span> Location tracking for quick dispatch</li>
                     <li><span className="check-icon"><FiCheck /></span> Real-time updates on help arrival</li>
                  </ul>
-                 <button className="btn-primary w-full mt-auto">Get the App</button>
+                 <button onClick={handleDownload} className="btn-primary w-full mt-auto">Get the App</button>
               </div>
               <div className="cta-card dark-card">
                  <h3 className="card-title text-white">Qualified Responder?</h3>
@@ -207,7 +215,7 @@ export default function Home() {
                     <li><span className="check-icon text-primary"><FiCheck /></span> Earn extra income on your terms</li>
                     <li><span className="check-icon text-primary"><FiCheck /></span> Make a real impact in your community</li>
                  </ul>
-                 <button className="btn-white w-full mt-auto">Apply to Respond</button>
+                 <button onClick={() => setIsModalOpen(true)} className="btn-white w-full mt-auto">Apply to Respond</button>
               </div>
            </div>
         </section>
@@ -220,7 +228,7 @@ export default function Home() {
               <h2>Don't Wait Until It's Too Late.</h2>
               <p>Be prepared for the unexpected. Download OnCallCare today and get help when you need it most.</p>
               <div className="final-actions">
-                 <button className="btn-white btn-large">Download the App</button>
+                 <button onClick={handleDownload} className="btn-white btn-large">Download the App</button>
                  <button className="btn-outline-white btn-large">Get Quick Help</button>
               </div>
            </div>
