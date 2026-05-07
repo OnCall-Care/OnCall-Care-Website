@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Globe from 'react-globe.gl';
 
 // Responder locations scattered around the world
@@ -37,7 +37,7 @@ const RING_DATA = [
 
 export default function GlobeVisual() {
   const globeEl = useRef<any>(null);
-  const [isReady, setIsReady] = useState(false);
+  const [, setIsReady] = useState(false);
 
   useEffect(() => {
     if (!globeEl.current) return;
