@@ -122,14 +122,20 @@ export default function Home() {
                        <div className="responder-avatar"><FaUserNurse /></div>
                        <div className="responder-info">
                           <h4 className="text-white">Jane Doe, RN</h4>
-                          <p className="text-primary">0.2 miles away • Arrives in 2 mins</p>
+                          <p className="text-primary">
+                            <span className="live-indicator"></span>
+                            0.2 miles away • Arrives in 2 mins
+                          </p>
                        </div>
                     </div>
                     <div className="responder-card">
                        <div className="responder-avatar"><FaUserNurse /></div>
                        <div className="responder-info">
                           <h4 className="text-white">Mark Lee, EMT</h4>
-                          <p className="text-primary">0.4 miles away • Arrives in 4 mins</p>
+                          <p className="text-primary">
+                            <span className="live-indicator"></span>
+                            0.4 miles away • Arrives in 4 mins
+                          </p>
                        </div>
                     </div>
                  </div>
