@@ -9,7 +9,7 @@ export default function Footer() {
             <span className="logo-text">OnCall<span className="logo-text-bold">Care</span></span>
           </Link>
           <p className="footer-desc" style={{marginTop: '16px'}}>
-            OnCallCare is dedicated to providing fast and reliable emergency services right when you need them.
+            Building the emergency routing layer that helps people in Nigeria reach verified help faster.
           </p>
         </div>
         
@@ -24,9 +24,9 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-heading">Services</h4>
             <Link to="/services">Emergency Help</Link>
-            <Link to="/services">Qualified Responders</Link>
-            <Link to="/services">Ambulance Booking</Link>
-            <Link to="/services">Consultation</Link>
+            <Link to="/services">How It Works</Link>
+            <Link to="/contact">Partner with Us</Link>
+            <Link to="/contact">Contact</Link>
           </div>
           <div className="footer-col">
             <h4 className="footer-heading">Legal</h4>

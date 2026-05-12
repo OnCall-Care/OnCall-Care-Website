@@ -127,8 +127,8 @@ export default function ResponderModal({ isOpen, onClose }: ResponderModalProps)
               <button onClick={onClose} className="modal-close-btn">
                 <FiX size={20} />
               </button>
-              <h3 className="modal-title">Apply to Respond</h3>
-              <p className="modal-subtitle">Join our network of elite medical professionals.</p>
+              <h3 className="modal-title">Request Partnership Review</h3>
+              <p className="modal-subtitle">For hospitals, ambulance services, and regulated emergency providers.</p>
             </div>
 
             <div className="modal-body">
@@ -141,7 +141,7 @@ export default function ResponderModal({ isOpen, onClose }: ResponderModalProps)
 
                 {/* Basic Info Group */}
                 <div className="form-field">
-                  <label className="form-label"><FiActivity /> Provider Name</label>
+                  <label className="form-label"><FiActivity /> Institution Name</label>
                   <input
                     required
                     name="name"
@@ -191,7 +191,7 @@ export default function ResponderModal({ isOpen, onClose }: ResponderModalProps)
                 </div>
 
                 <div className="form-field">
-                  <label className="form-label"><FiPhone /> Person Direct Line</label>
+                  <label className="form-label"><FiPhone /> Contact Direct Line</label>
                   <input
                     required
                     name="contact_phone"
@@ -203,7 +203,7 @@ export default function ResponderModal({ isOpen, onClose }: ResponderModalProps)
                 </div>
 
                 <div className="form-field">
-                  <label className="form-label"><FiAward /> Provider Type</label>
+                  <label className="form-label"><FiAward /> Partner Type</label>
                   <select
                     required
                     name="responder_type"
@@ -361,7 +361,7 @@ export default function ResponderModal({ isOpen, onClose }: ResponderModalProps)
                   disabled={isSubmitting}
                   className="modal-submit-btn"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Register as Provider'}
+                  {isSubmitting ? 'Submitting...' : 'Submit Partnership Request'}
                 </button>
               </form>
             </div>

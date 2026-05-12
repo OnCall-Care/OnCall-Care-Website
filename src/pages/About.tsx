@@ -12,7 +12,7 @@ export default function About() {
           <div className="container">
             <div className="badge mx-auto"><span className="pulse-dot"></span> Our Mission</div>
             <h1 className="page-title">Who We Are</h1>
-            <p className="page-desc mx-auto">We are building the world's fastest, hyper-local emergency response network by empowering verified off-duty professionals in your community.</p>
+            <p className="page-desc mx-auto">We are building the emergency routing layer that helps people in Nigeria find verified help faster, without turning the public site into an open marketplace.</p>
           </div>
         </section>
 
@@ -20,14 +20,14 @@ export default function About() {
           <div className="container">
             <div className="story-grid">
               <div className="story-content">
-                <h2 className="section-title">The Problem With <br/><span className="text-primary">Traditional Systems</span></h2>
-                <p className="section-desc">When a medical emergency strikes, every single second dictates the outcome. Traditional ambulances and emergency services are incredible, but they are often bottlenecked by traffic, dispatch queues, and sheer distance.</p>
-                <p className="section-desc">We realized that in most urban and suburban areas, there is a qualified nurse, EMT, or doctor living within a half-mile radius of any incident. They just didn't have a way to know someone next door needed help.</p>
+                <h2 className="section-title">The Problem With <br/><span className="text-primary">Panic And Guesswork</span></h2>
+                <p className="section-desc">In many emergencies, the real problem is not only speed. It is knowing who to call, which facility can actually handle the case, and how to reach them before the situation gets worse.</p>
+                <p className="section-desc">OnCall Care exists to remove that confusion by helping users surface the closest available verified option and open communication immediately.</p>
               </div>
               <div className="story-visual">
                 <div className="dark-card p-40">
                   <h3 className="text-white mb-20">Our Solution</h3>
-                  <p className="text-gray-light">OnCallCare bridges this gap by pinging verified, off-duty medical professionals right in your neighborhood the moment you request help. We turn your community into a rapid-response safety net.</p>
+                  <p className="text-gray-light">OnCallCare bridges the gap by giving users a direct path to verified hospitals, ambulances, and regulated emergency responders through a single emergency request.</p>
                 </div>
               </div>
             </div>
@@ -40,18 +40,18 @@ export default function About() {
             <div className="values-grid">
               <div className="value-card">
                 <div className="value-icon"><FiZap /></div>
-                <h3>Speed Over Everything</h3>
-                <p className="text-gray-light">We measure success in seconds, not minutes. Fast response is our ultimate priority.</p>
+                <h3>Clarity Over Panic</h3>
+                <p className="text-gray-light">We measure success by how quickly a person understands the next step when they are under pressure.</p>
               </div>
               <div className="value-card">
                 <div className="value-icon"><FiShield /></div>
-                <h3>Uncompromising Safety</h3>
-                <p className="text-gray-light">Every responder goes through rigorous background checks and continuous license verification.</p>
+                <h3>Verified Partners</h3>
+                <p className="text-gray-light">Only regulated hospitals and emergency providers that complete our review process are surfaced to users.</p>
               </div>
               <div className="value-card">
                 <div className="value-icon"><FaHandshake /></div>
-                <h3>Community First</h3>
-                <p className="text-gray-light">We believe neighbors saving neighbors builds stronger, safer communities for everyone.</p>
+                <h3>Direct Communication</h3>
+                <p className="text-gray-light">We connect people to the right help fast, then let the responder and patient coordinate the next step.</p>
               </div>
             </div>
           </div>
