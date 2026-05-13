@@ -1,21 +1,27 @@
-import { lazy, Suspense, useState } from 'react';
+import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ResponderModal from '../components/ResponderModal';
-import { FiShield, FiClock, FiMapPin, FiRadio, FiLock, FiStar, FiCheck } from 'react-icons/fi';
-import { FaAmbulance, FaHandshake, FaHospital, FaUserNurse } from 'react-icons/fa';
-
-const GlobeVisual = lazy(() => import('../components/GlobeVisual'));
+import { FiMapPin, FiRadio, FiMail } from 'react-icons/fi';
+import { FaHandshake, FaHospital, FaHandsHelping, FaLandmark } from 'react-icons/fa';
 
 export default function Home() {
    const [isModalOpen, setIsModalOpen] = useState(false);
 
    const handleEarlyAccess = () => {
-      window.location.href = 'mailto:info@oncallcare.health?subject=Request%20Early%20Access%20to%20OnCall%20Care';
+      window.location.href = 'mailto:info@oncallcare.health?subject=Request%20Early%20Access%20to%20OnCall%20Care&body=Hello%20OnCall%20Care%2C%0A%0AI%20would%20like%20to%20request%20early%20access%20to%20the%20platform.%0A%0AThank%20you';
+   };
+
+   const handlePartnership = () => {
+      window.location.href = 'mailto:admin@oncallcare.health?subject=Partnership%20and%20Responder%20Onboarding&body=Hello%20OnCall%20Care%20Team%2C%0A%0AI%20am%20interested%20in%20partnering%20with%20OnCall%20Care%20or%20onboarding%20as%20a%20verified%20responder.%0A%0APlease%20share%20more%20details.%0A%0AThank%20you';
+   };
+
+   const handleSupport = () => {
+      window.location.href = 'mailto:support@oncallcare.health?subject=Support%20Request&body=Hello%20OnCall%20Care%20Support%2C%0A%0AI%20need%20assistance%20with...%0A%0AThank%20you';
    };
 
    const handleTestApp = () => {
-      window.location.href = '/contact';
+      document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
    };
 
    return (
@@ -27,201 +33,128 @@ export default function Home() {
             <section className="hero-section">
                <div className="container hero-inner">
                   <div className="hero-content">
-                     <div className="badge"><span className="pulse-dot"></span> Emergency routing for Nigeria</div>
-                     <h1 className="hero-title">The closest verified help<br /><span className="text-primary">that can respond now.</span></h1>
-                     <p className="hero-desc">Register the emergency and see the nearest verified help instantly.</p>
-                     <div className="hero-actions">
+                     <div className="badge animate-fade-in"><span className="pulse-dot"></span> Emergency routing for Nigeria</div>
+                     <h1 className="hero-title animate-fade-up">
+                        <span className="hero-title-light">During a health emergency, do you know who to call, where to go, or which responder can reach you fastest?</span>
+                        <span className="text-primary hero-title-bold">OnCall Care puts all emergency health responders in one place.</span>
+                     </h1>
+                     <div className="hero-actions animate-fade-up animate-delay-1">
                         <button onClick={handleEarlyAccess} className="btn-primary btn-large">Request Early Access</button>
-                        <button onClick={handleTestApp} className="btn-outline btn-large">Contact Us</button>
+                        <button onClick={handleTestApp} className="btn-outline btn-large">See How It Works</button>
                      </div>
-                     <p style={{ fontSize: '0.875rem', color: '#666', marginTop: '12px' }}>Built for people in Nigeria who need a faster way to find help in an emergency. Partner onboarding is handled separately through direct outreach and verification.</p>
                   </div>
-                  <div className="hero-visual">
-                     <img src="/images/hero_map.png" alt="Emergency Map" className="hero-map-img" />
+                  <div className="hero-visual-premium animate-scale-in">
+                     <div className="premium-bg-grid"></div>
+                     <div className="premium-glow"></div>
+                     
+                     {/* Floating UI Card 1: Map Route */}
+                     <div className="ui-card map-card animate-float-slow">
+                        <div className="card-header">
+                           <div className="dot green"></div>
+                           <span className="card-title">Live Tracking</span>
+                        </div>
+                        <div className="map-mockup">
+                           <div className="route-line"></div>
+                           <div className="map-pin user-pin"><div className="pulse"></div></div>
+                           <div className="map-pin amb-pin"><div className="pulse red"></div></div>
+                        </div>
+                     </div>
+
+                     {/* Floating UI Card 2: Status */}
+                     <div className="ui-card status-card animate-float-medium animate-delay-1">
+                        <div className="status-icon"><FiRadio /></div>
+                        <div className="status-info">
+                           <span className="status-label">Ambulance Dispatched</span>
+                           <span className="status-time">ETA: 3 mins</span>
+                        </div>
+                     </div>
+
+                     {/* Floating UI Card 3: Responder Profile */}
+                     <div className="ui-card profile-card animate-float-fast animate-delay-2">
+                        <div className="profile-avatar"></div>
+                        <div className="profile-info">
+                           <span className="profile-name">Dr. Adebayo</span>
+                           <span className="profile-role">Emergency Responder</span>
+                        </div>
+                        <div className="rating">★ 4.9</div>
+                     </div>
                   </div>
                </div>
             </section>
 
-            {/* Emergencies Happen Section */}
+            {/* Platform Overview Section */}
             <section className="emergencies-section bg-light-blue">
                <div className="container text-center">
-                  <h2 className="section-title">When Emergencies Happen,<br /><span className="text-primary">People Panic Before They Know Where to Go</span></h2>
-                  <p className="section-desc mx-auto">OnCall Care gives people a clear first move: register the emergency, see the closest available option, and start the line of communication immediately.</p>
+                  <h2 className="section-title">OnCall Care is a digital coordination layer<br /><span className="text-primary">for emergency healthcare access.</span></h2>
+                  <p className="section-desc mx-auto">The platform aggregates existing emergency healthcare providers including hospitals, ambulance operators, emergency response organizations, and specialized transport services, into one unified system that users can access in real time. The goal is simple: connect people to the right emergency responder as quickly as possible.</p>
 
-                  <div className="emergencies-grid">
-                     <div className="emergencies-col left-col">
-                        <div className="emergencies-card">
-                           <div className="card-icon"><FaAmbulance /></div>
-                           <div className="card-text">
-                              <h4>No Clear First Step</h4>
-                              <p>In an emergency, people often panic, gather around, and waste time figuring out what to do next.</p>
-                           </div>
-                        </div>
-                        <div className="emergencies-card">
-                           <div className="card-icon"><FiClock /></div>
-                           <div className="card-text">
-                              <h4>Wrong Facility, Wrong Time</h4>
-                              <p>Without fast triage, a patient can be taken to a hospital that cannot handle the case.</p>
-                           </div>
-                        </div>
-                        <img src="/images/ambulance.png" alt="Ambulance" className="ambulance-img" />
-                     </div>
 
-                     <div className="emergencies-col right-col red-card">
-                        <div className="red-card-header">MEDICAL EMERGENCY</div>
-                        <h3 className="red-card-title">Find The Closest Available Help</h3>
-                        <p className="red-card-desc">OnCall Care helps surface the nearest verified option with the right capability, then opens a fast call or coordination line so the responder can guide the next step.</p>
-
-                        <div className="red-card-features">
-                           <div className="feature-item"><span className="icon"><FiClock /></span> Closest available match</div>
-                           <div className="feature-item"><span className="icon"><FiShield /></span> Verified partners only</div>
-                        </div>
-                     </div>
-                  </div>
                </div>
             </section>
 
             {/* How It Works */}
-            <section className="how-it-works-section">
+            <section id="how-it-works" className="how-it-works-section">
                <div className="container text-center">
                   <h2 className="section-title">How OnCall Care Works</h2>
                   <div className="steps-grid">
                      <div className="step-card">
                         <div className="step-icon"><FiMapPin /></div>
-                        <h4 className="step-title">1. Register The Emergency</h4>
-                        <p className="step-desc">The user opens the app and describes what happened, where it happened, and how urgent it is.</p>
+                        <h4 className="step-title">1. Emergency Request</h4>
+                        <p className="step-desc">Users initiate an emergency request through the platform with location-enabled reporting and structured emergency information.</p>
                      </div>
                      <div className="step-card">
                         <div className="step-icon"><FiRadio /></div>
-                        <h4 className="step-title">2. Surface The Best Match</h4>
-                        <p className="step-desc">The system compares nearby verified hospitals, ambulances, and responders by capability, availability, and distance.</p>
+                        <h4 className="step-title">2. Intelligent Triage</h4>
+                        <p className="step-desc">The system classifies urgency and identifies the type of emergency response required.</p>
                      </div>
                      <div className="step-card">
                         <div className="step-icon"><FaHandshake /></div>
-                        <h4 className="step-title">3. Start Communication</h4>
-                        <p className="step-desc">The user can call, confirm availability, and get guidance before moving the patient or victim.</p>
+                        <h4 className="step-title">3. Real-Time Matching</h4>
+                        <p className="step-desc">Nearby hospitals, ambulances, and emergency responders are ranked based on proximity, capability, and estimated arrival time.</p>
                      </div>
                      <div className="step-card">
                         <div className="step-icon"><FaHospital /></div>
-                        <h4 className="step-title">4. Route To Care</h4>
-                        <p className="step-desc">If needed, the responder directs the next step so the patient reaches the right facility faster and with less confusion.</p>
+                        <h4 className="step-title">4. Coordinated Response</h4>
+                        <p className="step-desc">Responders receive dispatch details immediately while receiving facilities can be notified in advance for continuity of care.</p>
                      </div>
                   </div>
                </div>
             </section>
 
-            {/* Built for Speed */}
-            <section className="built-for-speed-section">
-               <div className="container speed-inner">
-                  <div className="speed-content">
-                     <h2 className="section-title text-white">Built for Clarity.<br /><span className="text-primary">Powered by Availability.</span></h2>
-                     <p className="section-desc text-gray-light">Instead of guessing, people can see which verified option is closest, which one can actually handle the case, and how fast they can respond.</p>
 
-                     <div className="responder-list">
-                        <div className="responder-card">
-                           <div className="responder-avatar"><FaUserNurse /></div>
-                           <div className="responder-info">
-                              <h4 className="text-white">Jane Doe, RN</h4>
-                              <p className="text-primary">
-                                 <span className="live-indicator"></span>
-                                 Available now • Can guide first aid
-                              </p>
-                           </div>
-                        </div>
-                        <div className="responder-card">
-                           <div className="responder-avatar"><FaUserNurse /></div>
-                           <div className="responder-info">
-                              <h4 className="text-white">Mark Lee, EMT</h4>
-                              <p className="text-primary">
-                                 <span className="live-indicator"></span>
-                                 Nearby option • Ready to coordinate
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div className="speed-visual">
-                     <Suspense fallback={<div style={{ width: 380, height: 380, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#555' }}>Loading Globe...</div>}>
-                        <GlobeVisual />
-                     </Suspense>
-                  </div>
-               </div>
-            </section>
 
-            {/* Trust & Safety */}
-            <section className="trust-section bg-light-blue">
-               <div className="container trust-inner">
-                  <div className="trust-content">
-                     <h2 className="section-title">Built on Trust, Verification &<br />Clear Access</h2>
-                     <div className="trust-list">
-                        <div className="trust-item">
-                           <div className="trust-icon"><FiShield /></div>
-                           <div className="trust-text">
-                              <h4>Verified Providers</h4>
-                              <p>Only hospitals, ambulances, and regulated emergency responders that complete our verification process are surfaced to users.</p>
-                           </div>
-                        </div>
-                        <div className="trust-item">
-                           <div className="trust-icon"><FiLock /></div>
-                           <div className="trust-text">
-                              <h4>Partner By Outreach</h4>
-                              <p>We do not open the platform to random signups. Providers are added through direct review and a private onboarding process.</p>
-                           </div>
-                        </div>
-                        <div className="trust-item">
-                           <div className="trust-icon"><FiStar /></div>
-                           <div className="trust-text">
-                              <h4>Communication First</h4>
-                              <p>The user always knows who is available, how to reach them, and what to do next before moving the patient.</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div className="trust-stats">
-                     <div className="stats-grid">
-                        <div className="stat-box">
-                           <h3>Fast</h3>
-                           <p>Emergency routing</p>
-                        </div>
-                        <div className="stat-box">
-                           <h3>Clear</h3>
-                           <p>Next best option</p>
-                        </div>
-                        <div className="stat-box">
-                           <h3>Verified</h3>
-                           <p>Partner only</p>
-                        </div>
-                        <div className="stat-box">
-                           <h3>Aligned</h3>
-                           <p>With real-world response</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section>
+            {/* Early Access Section */}
+            <section className="early-access-section">
+               <div className="container early-access-inner">
+                  <div className="early-access-content">
+                     <h2 className="section-title">Get In Touch</h2>
+                     <p className="section-desc">We are currently onboarding early users, healthcare partners, and emergency response collaborators within Lagos as part of our initial pilot phase.</p>
+                     <p className="section-desc">Choose how you'd like to connect with us:</p>
 
-            {/* CTA Cards */}
-            <section className="cta-cards-section">
-               <div className="container cards-inner">
-                  <div className="cta-card white-card">
-                     <h3 className="card-title">Need Help Now?</h3>
-                     <p className="card-desc">Open the app, register the emergency, and let the system show you the closest verified option before panic takes over.</p>
-                     <ul className="check-list">
-                        <li><span className="check-icon"><FiCheck /></span> Register the emergency in seconds</li>
-                        <li><span className="check-icon"><FiCheck /></span> See the closest available help</li>
-                        <li><span className="check-icon"><FiCheck /></span> Start a direct line of communication</li>
-                     </ul>
-                     <button onClick={handleEarlyAccess} className="btn-primary w-full mt-auto">Request Early Access</button>
-                  </div>
-                  <div className="cta-card dark-card">
-                     <h3 className="card-title text-white">Hospital Or Provider?</h3>
-                     <p className="card-desc text-gray-light">If your institution is regulated and ready to be verified, we onboard through direct outreach and a separate partner review process.</p>
-                     <ul className="check-list check-list-dark">
-                        <li><span className="check-icon text-primary"><FiCheck /></span> Verified partner onboarding</li>
-                        <li><span className="check-icon text-primary"><FiCheck /></span> Direct communication with admin</li>
-                        <li><span className="check-icon text-primary"><FiCheck /></span> No public self-signup</li>
-                     </ul>
-                     <button onClick={() => setIsModalOpen(true)} className="btn-white w-full mt-auto">Request Partnership Review</button>
+                     <div className="email-buttons-grid">
+                        <button onClick={handleEarlyAccess} className="email-button-card">
+                           <div className="email-button-icon"><FiMail /></div>
+                           <h3 className="email-button-title">Request Early Access</h3>
+                           <p className="email-button-desc">Try the platform and provide feedback to shape emergency healthcare in Nigeria</p>
+                           <span className="email-address">info@oncallcare.health</span>
+                        </button>
+
+                        <button onClick={handlePartnership} className="email-button-card">
+                           <div className="email-button-icon"><FaLandmark /></div>
+                           <h3 className="email-button-title">Partnership & Onboarding</h3>
+                           <p className="email-button-desc">Integrate as a hospital, ambulance operator, or emergency response organization</p>
+                           <span className="email-address">admin@oncallcare.health</span>
+                        </button>
+
+                        <button onClick={handleSupport} className="email-button-card">
+                           <div className="email-button-icon"><FaHandsHelping /></div>
+                           <h3 className="email-button-title">Get Support</h3>
+                           <p className="email-button-desc">Questions or technical issues? Our team is here to help</p>
+                           <span className="email-address">support@oncallcare.health</span>
+                        </button>
+                     </div>
+
+                     <p className="early-access-notice">Clicking any button will open your default email client with a pre-filled message.</p>
                   </div>
                </div>
             </section>
@@ -235,7 +168,7 @@ export default function Home() {
                   <p>OnCall Care helps people in Nigeria find the right emergency help faster, with a separate path for verified partner onboarding.</p>
                   <div className="final-actions">
                      <button onClick={handleEarlyAccess} className="btn-white btn-large">Request Early Access</button>
-                     <button onClick={handleTestApp} className="btn-outline-white btn-large">Contact Us</button>
+                     <button onClick={handleTestApp} className="btn-outline-white btn-large">See How It Works</button>
                   </div>
                </div>
             </section>
