@@ -35,11 +35,14 @@ export default function Home() {
                   <div className="hero-content">
                      <div className="badge animate-fade-in"><span className="pulse-dot"></span> Emergency routing for Nigeria</div>
                      <h1 className="hero-title animate-fade-up">
-                        <span className="hero-title-light">During a health emergency, do you know who to call, where to go, or which responder can reach you fastest?</span>
-                        <span className="text-primary hero-title-bold">OnCall Care puts all emergency health responders in one place.</span>
+                        <span className="hero-title-light">During a <strong className="text-primary">health emergency</strong>, do you know who to call, where to go, or which responder can reach you fastest?</span>
+                        <span className="hero-title-bold">OnCall Care puts all emergency health responders in one place.</span>
                      </h1>
-                     <div className="hero-actions animate-fade-up animate-delay-1">
-                        <button onClick={handleEarlyAccess} className="btn-primary btn-large">Request Early Access</button>
+                     <p className="hero-subtitle animate-fade-up animate-delay-1">
+                        The goal is to connect people to the right emergency responder as quickly as possible.
+                     </p>
+                     <div className="hero-actions animate-fade-up animate-delay-2">
+                        <button onClick={handleEarlyAccess} className="btn-primary btn-large">Join the pilot phase</button>
                         <button onClick={handleTestApp} className="btn-outline btn-large">See How It Works</button>
                      </div>
                   </div>
@@ -73,8 +76,8 @@ export default function Home() {
                      <div className="ui-card profile-card animate-float-fast animate-delay-2">
                         <div className="profile-avatar"></div>
                         <div className="profile-info">
-                           <span className="profile-name">Dr. Adebayo</span>
-                           <span className="profile-role">Emergency Responder</span>
+                           <span className="profile-name">Green Wood EMS</span>
+                           <span className="profile-role">Ambulance Service</span>
                         </div>
                         <div className="rating">★ 4.9</div>
                      </div>
@@ -127,15 +130,13 @@ export default function Home() {
             <section className="early-access-section">
                <div className="container early-access-inner">
                   <div className="early-access-content">
-                     <h2 className="section-title">Get In Touch</h2>
-                     <p className="section-desc">We are currently onboarding early users, healthcare partners, and emergency response collaborators within Lagos as part of our initial pilot phase.</p>
-                     <p className="section-desc">Choose how you'd like to connect with us:</p>
+                     <h2 className="section-title">Connect with us</h2>
 
                      <div className="email-buttons-grid">
                         <button onClick={handleEarlyAccess} className="email-button-card">
                            <div className="email-button-icon"><FiMail /></div>
-                           <h3 className="email-button-title">Request Early Access</h3>
-                           <p className="email-button-desc">Try the platform and provide feedback to shape emergency healthcare in Nigeria</p>
+                           <h3 className="email-button-title">Join the pilot phase</h3>
+                           <p className="email-button-desc">Try the platform and provide feedback to shape the future of health emergency response in Nigeria</p>
                            <span className="email-address">info@oncallcare.health</span>
                         </button>
 
@@ -154,7 +155,7 @@ export default function Home() {
                         </button>
                      </div>
 
-                     <p className="early-access-notice">Clicking any button will open your default email client with a pre-filled message.</p>
+
                   </div>
                </div>
             </section>
@@ -167,7 +168,7 @@ export default function Home() {
                   <h2>When Panic Starts, Clarity Matters.</h2>
                   <p>OnCall Care helps people in Nigeria find the right emergency help faster, with a separate path for verified partner onboarding.</p>
                   <div className="final-actions">
-                     <button onClick={handleEarlyAccess} className="btn-white btn-large">Request Early Access</button>
+                     <button onClick={handleEarlyAccess} className="btn-white btn-large">Join the pilot phase</button>
                      <button onClick={handleTestApp} className="btn-outline-white btn-large">See How It Works</button>
                   </div>
                </div>
