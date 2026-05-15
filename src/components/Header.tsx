@@ -21,10 +21,6 @@ export default function Header() {
     }
   }, [isMenuOpen]);
 
-  const handleDownload = () => {
-    window.location.href = 'mailto:info@oncallcare.health?subject=Test OnCall Care App';
-  };
-
   return (
     <>
       <header className="header">
@@ -43,7 +39,7 @@ export default function Header() {
 
           <div className="header-actions">
             <Link to="/contact" className="login-link" style={{textDecoration: 'none'}}>FAQ</Link>
-            <button onClick={handleDownload} className="btn-primary">Request Early Access</button>
+            <a href="/oncallcare.apk" download="oncallcare.apk" className="btn-primary" style={{textDecoration: 'none', display: 'inline-block', textAlign: 'center'}}>Get App</a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -73,9 +69,9 @@ export default function Header() {
           <Link to="/services" className={path === '/services' ? 'active' : ''}>Services</Link>
           <Link to="/contact" className={path === '/contact' ? 'active' : ''}>Contact</Link>
           <Link to="/contact" className="mobile-faq-link">FAQ</Link>
-            <button onClick={handleDownload} className="btn-primary mobile-download-btn">
-              Request Early Access
-          </button>
+            <a href="/oncallcare.apk" download="oncallcare.apk" className="btn-primary mobile-download-btn" style={{textDecoration: 'none', display: 'block', textAlign: 'center'}}>
+              Get App
+            </a>
         </nav>
       </div>
     </>
