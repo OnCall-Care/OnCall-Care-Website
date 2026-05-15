@@ -485,16 +485,23 @@ button, .btn-primary, .btn-outline, .btn-white, .btn-outline-white {
   
   .hero-title { font-size: 36px; line-height: 1.2; }
   .hero-desc { font-size: 16px; margin-bottom: 30px; }
-  .section-title { font-size: 32px; }
-  .section-desc { font-size: 16px; }
-  .final-cta-inner h2 { font-size: 36px; }
+  .section-title { font-size: 28px; }
+  .section-desc { font-size: 15px; }
+  .final-cta-inner h2 { font-size: 32px; }
+  .final-cta-inner { padding: 56px 24px; }
   
   .hero-actions, .final-actions { flex-direction: column; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; }
   .hero-actions button, .final-actions button { width: 100%; }
-  .hero-inner { gap: 40px; padding: 40px 0; }
+  .hero-inner { gap: 0; padding: 24px 0; }
   .section { padding: 60px 0; }
 
   .speed-visual { display: none; }
+  .hero-visual-premium { display: none; }
+  .hero-section { padding: 40px 0 56px 0; }
+  .hero-content { text-align: center; padding: 0 8px; }
+  .hero-subtitle { margin-left: auto; margin-right: auto; font-size: 16px; max-width: 360px; }
+  .badge { justify-content: center; margin-bottom: 8px; }
+  .hero-actions { margin-top: 8px; }
 }
 
 /* --- New Pages Styles --- */
@@ -942,8 +949,18 @@ button, .btn-primary, .btn-outline, .btn-white, .btn-outline-white {
 }
 
 @media (max-width: 1024px) {
-  .hero-title-light { font-size: 24px; }
-  .hero-title-bold { font-size: 36px; }
+  .hero-title-light { font-size: 20px; line-height: 1.5; margin-bottom: 8px; }
+  .hero-title-bold { font-size: 40px; letter-spacing: -1.5px; margin-top: 16px; }
+}
+
+@media (max-width: 480px) {
+  .hero-title-light { font-size: 17px; }
+  .hero-title-bold { font-size: 32px; letter-spacing: -1px; }
+  .hero-subtitle { font-size: 15px; }
+  .section-title { font-size: 24px; }
+  .final-cta-inner h2 { font-size: 28px; }
+  .final-cta-inner p { font-size: 15px; }
+  .hero-section { padding: 32px 0 48px 0; }
 }
 
 /* Animations */
