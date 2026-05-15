@@ -88,7 +88,7 @@ export default function Home() {
             <section className="emergencies-section bg-light-blue">
                <div className="container text-center">
                   <h2 className="section-title">OnCall Care is a digital coordination layer<br /><span className="text-primary">for emergency healthcare access.</span></h2>
-                  <p className="section-desc mx-auto">The platform aggregates existing emergency healthcare providers including hospitals, ambulance operators, emergency response organizations, and specialized transport services, into one unified system that users can access in real time. The goal is simple: connect people to the right emergency responder as quickly as possible.</p>
+                  <p className="section-desc mx-auto">The platform aggregates existing emergency healthcare providers including hospitals, ambulance operators, emergency response organizations, and specialized transport services, into one unified system that users can access in real time.</p>
 
 
                </div>
