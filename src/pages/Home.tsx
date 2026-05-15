@@ -91,7 +91,7 @@ export default function Home() {
             <section className="emergencies-section bg-light-blue">
                <div className="container text-center">
                   <h2 className="section-title">OnCall Care is a digital coordination layer<br /><span className="text-primary">for emergency healthcare access.</span></h2>
-                  <p className="section-desc mx-auto">The platform aggregates existing emergency healthcare providers including hospitals, ambulance operators, emergency response organizations, and specialized transport services, into one unified system that users can access in real time. The goal is simple: connect people to the right emergency responder as quickly as possible.</p>
+                  <p className="section-desc mx-auto">The platform aggregates existing emergency healthcare providers including hospitals, ambulance operators, emergency response organizations, and specialized transport services, into one unified system that users can access in real time.</p>
 
 
                </div>
@@ -167,11 +167,10 @@ export default function Home() {
                <div className="container text-center text-white final-cta-inner">
                   <div className="red-bg-circle-1"></div>
                   <div className="red-bg-circle-2"></div>
-                  <h2>When Panic Starts, Clarity Matters.</h2>
-                  <p>OnCall Care helps people in Nigeria find the right emergency help faster, with a separate path for verified partner onboarding.</p>
+                  <h2>Replace Panic With Clarity</h2>
+                  <p>OnCall Care helps you find the closest health emergency responder within range.</p>
                   <div className="final-actions">
-                     <button onClick={handleEarlyAccess} className="btn-white btn-large">Join the pilot phase</button>
-                     <button onClick={handleTestApp} className="btn-outline-white btn-large">See How It Works</button>
+                     <button onClick={handleEarlyAccess} className="btn-white btn-large">Get help now</button>
                   </div>
                </div>
             </section>
